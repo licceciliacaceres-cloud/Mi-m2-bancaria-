@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi m² en Bancaria | Club Unión Deportiva Bancaria</title>
+<meta name="description" content="Elegí tu m² y ayudá a transformar el Club Bancaria.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="horse">♞</div><div><strong>BANCARIA</strong><small>Club Unión Deportiva Bancaria</small></div></div>
+  <nav>
+    <a href="#proyecto">El proyecto</a><a href="#mapa">Mapa</a><a href="#como">Cómo funciona</a><a href="#beneficios">Beneficios</a><a href="#faq">Preguntas frecuentes</a>
+  </nav>
+  <button class="admin-btn" onclick="openAdmin()">♙ INGRESAR</button>
+</header>
+
+<main>
+<section class="hero" id="proyecto">
+  <div class="hero-copy">
+    <span class="eyebrow">MI M² BANCARIA · UN SUEÑO EN EQUIPO</span>
+    <h1>MI M²<br>EN BANCARIA</h1>
+    <p>Ayudanos a construir juntos un nuevo espacio verde para seguir creciendo como club.</p>
+    <div class="goldline"></div>
+    <div class="price"><span>💳</span><div>Cada m² cuesta<strong>$10.000</strong></div></div>
+    <div class="ticket"><span>🎟️</span><div>Además recibís<strong>2 entradas</strong><small>1 Masculino + 1 Femenino<br>para partidos de Primera</small></div></div>
+    <a class="primary" href="#mapa">ELEGÍ TU M²</a>
+  </div>
+  <div class="hero-image">
+    <img src="terreno.jpg" alt="Espacio del Club Bancaria">
+    <div class="image-caption">Un nuevo espacio para nuestra comunidad.</div>
+  </div>
+</section>
+
+
+
+<section class="workspace">
+  <div class="map-card">
+    <div class="section-title"><div><span class="eyebrow">MAPA PARTICIPATIVO</span><h2>Elegí tu lugar</h2></div><span class="hint">Seleccioná un m² disponible para comenzar</span></div>
+    <div id="grid" class="grid"></div>
+    <div class="legend"><span><i class="dot available"></i>Disponible</span><span><i class="dot reserved"></i>Reservado</span><span><i class="dot acquired"></i>Adquirido</span></div>
+  </div>
+  <aside class="side">
+    <div class="card payment-card"><h3>💳 PAGÁ TU M²</h3><p>Seleccioná uno o varios m² y completá tus datos. El sistema generará una operación de Mercado Pago asociada exactamente a tu reserva.</p><div class="payment-direct"><img src="qr_mercadopago.png" alt="QR de Mercado Pago" class="payment-qr"><div><strong>¿Querés hacer un aporte general?</strong><p class="small">También podés usar el QR/link de Mercado Pago. Ese aporte no asigna automáticamente un m².</p><a class="secondary-link" href="https://mpago.la/17s5CWD" target="_blank" rel="noopener">Abrir link de aporte general →</a></div></div></div>
+    <div class="card" id="selectionCard"><h3>🌱 TU SELECCIÓN</h3><div class="empty">Elegí un m² verde del mapa.</div></div>
+    <div class="card"><h3>👥 ÚLTIMOS COLABORADORES</h3><div id="supporters" class="supporters"></div></div>
+  </aside>
+</section>
+
+<section class="steps" id="como">
+  <span class="eyebrow">CÓMO FUNCIONA</span><h2>Tu aporte en 4 pasos</h2>
+  <div class="step-grid">
+    <article><b>01</b><h3>Elegí</h3><p>Seleccioná un m² disponible en el mapa.</p></article>
+    <article><b>02</b><h3>Completá</h3><p>Ingresá nombre, apellido, división y email.</p></article>
+    <article><b>03</b><h3>Pagá</h3><p>Realizá el pago seguro de $10.000 con Mercado Pago.</p></article>
+    <article><b>04</b><h3>Sumate</h3><p>Mercado Pago confirma el pago y recibís por email tu comprobante y el vale por 2 entradas.</p></article>
+  </div>
+</section>
+
+<section class="benefits" id="beneficios">
+  <div><span class="eyebrow">TU M², TU HUELLA</span><h2>Elegí cómo querés aparecer</h2><p>En el mapa público podés figurar con tu nombre, como familia, de forma anónima o en homenaje a alguien. Tus datos personales quedan protegidos en la administración.</p></div>
+  <div class="privacy-box"><strong>🌱 ¿Cómo querés que aparezca tu aporte?</strong><div>○ Juan Pérez</div><div>○ Familia Pérez</div><div>○ Aporte anónimo</div><div>○ En honor a…</div></div>
+</section>
+
+<section class="faq" id="faq"><span class="eyebrow">PREGUNTAS FRECUENTES</span><h2>Todo claro antes de participar</h2>
+<details><summary>¿Cuánto cuesta un m²?</summary><p>$10.000 por m².</p></details>
+<details><summary>¿Puedo comprar más de un m²?</summary><p>Sí. En la versión final podrás seleccionar varios m² en una misma operación.</p></details>
+<details><summary>¿Qué recibo además?</summary><p>Un vale digital por 2 entradas para partidos de Primera: una masculina y una femenina.</p></details>
+<details><summary>¿Mis datos quedan públicos?</summary><p>No. Podés elegir cómo querés aparecer en el mapa público.</p></details>
+</section>
+</main>
+
+<footer><div class="brand"><div class="horse">♞</div><strong>BANCARIA</strong></div><p>La vida por estos colores.</p><span>Club Unión Deportiva Bancaria · San Juan, Argentina</span></footer>
+
+<div id="modal" class="modal hidden"><div class="modal-box">
+  <button class="close" onclick="closeModal()">×</button>
+  <div id="modalContent"></div>
+</div></div>
+
+<div id="admin" class="modal hidden"><div class="modal-box admin-box">
+  <button class="close" onclick="closeAdmin()">×</button>
+  <div id="adminContent"></div>
+</div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
